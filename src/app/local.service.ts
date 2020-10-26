@@ -16,7 +16,5 @@ export class LocalService {
   tsInfo: any = {};
   // post data
   post: any;
-  // reported post data 
-  reported: any; 
   constructor() {}
 }

@@ -34,6 +34,10 @@ export class StudentProfilComponent implements OnInit {
       this.local.otherProfile = res[0];
       this.router.navigateByUrl('/resultSearch');
     });
+   
+  }
+  takeMeToReports(){
+    this.router.navigateByUrl('sendReport')
   }
   // feed(){
   //   this.router.navigateByUrl('/feed/student');

@@ -38,8 +38,4 @@ export class StudentFeedComponent implements OnInit {
     this.local.onePost = post;
     this.router.navigateByUrl('/post');
   }
-  report(post) {
-    this.local.reported = post
-    this.router.navigateByUrl('report/post',);
-  }
 }

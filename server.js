@@ -888,23 +888,42 @@ app.post("/api/users/GoldMembership", (req, res) => {
   });
 }); 
 
-app.post("/api/report", (req, res) => {
-  var report = [req.body.name,
-    req.body.reason,
-    req.body.comment,
-    req.body.postId
-  
-  ]
-  db.reportSt(report, (err, data) => {
+//save users report to db
+
+app.post('/api/users/Reports', (req, res) => {
+  let obj = req.body
+  for(var key in obj){
+    if(!obj[key]){
+       obj[key] = "anonymous"
+    }
+  }
+  console.log(obj)
+  db.userReports(Object.values(obj), (err, data) => {
+    err ? console.log(err) : console.log(data);
+  });
+})
+
+//get the reports for the admin
+app.get('/api/admin/getReports',(req, res) =>{
+  db.getReports( (err, data) => {
     err ? console.log(err) : res.send(data);
   });
-}); 
+})
 
-app.get("/api/adminReports", (req, res) => {
-  db.getReportsFromUser((err, data) => {
-    if (err) throw err;
-    res.send(data);
+//delete one report for the admin
+app.post('/api/admin/delReports', (req, res)=>{
+  console.log(req.body.id)
+  db.delOneReport(req.body.id, (err, data) => {
+    err ? console.log(err) : console.log(data);
   });
-});
+}) 
+
+//delete all report for the admin
+app.delete('/api/admin/delAllReports', (req, res)=>{
+  db.delAllReports((err, data) => {
+    err ? console.log(err) : console.log(data);
+  })
+})
+
 
 app.listen(port, () => console.log(`server is listening on port ${port}`));

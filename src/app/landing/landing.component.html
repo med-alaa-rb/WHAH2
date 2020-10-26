@@ -1,59 +1,11 @@
-<nav class="navbar navbar-light" style="background-color: #e3f2fd">
-  <img src="../../assets/logo.png" style="width: 10%; height: 10%" />
-  <div class="dropdown">
-    <a
-      class="btn btn-secondary dropdown-toggle"
-      href="#"
-      role="button"
-      id="dropdownMenuLink"
-      data-toggle="dropdown"
-      aria-haspopup="true"
-      aria-expanded="false"
-    >
-      Student
-    </a>
-
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-      <a class="dropdown-item" (click)="student()"> Signup</a>
-      <a class="dropdown-item" (click)="studentl()"> Login</a>
-    </div>
-  </div>
-  <div class="dropdown">
-    <a
-      class="btn btn-secondary dropdown-toggle"
-      href="#"
-      role="button"
-      id="dropdownMenuLink"
-      data-toggle="dropdown"
-      aria-haspopup="true"
-      aria-expanded="false"
-    >
-      Company
-    </a>
-
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-      <a class="dropdown-item" (click)="company()"> Signup</a>
-      <a class="dropdown-item" (click)="companyl()"> Login</a>
-    </div>
-  </div>
-  <div class="dropdown">
-    <a
-      class="btn btn-secondary dropdown-toggle"
-      href="#"
-      role="button"
-      id="dropdownMenuLink"
-      data-toggle="dropdown"
-      aria-haspopup="true"
-      aria-expanded="false"
-    >
-      Training Center
-    </a>
-
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-      <a class="dropdown-item" (click)="center()"> Signup</a>
-      <a class="dropdown-item" (click)="centerl()"> Login</a>
-    </div>
-  </div>
+<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+  <img src="../../assets/logo.png" style="width: 10%; height: 10%;" />
+  <a (click)="student()">student signup</a>
+  <a (click)="company()">company signup</a>
+  <a (click)="center()">center signup</a>
+  <a (click)="studentl()">student login</a>
+  <a (click)="companyl()">company login</a>
+  <a (click)="centerl()">center login</a>
 </nav>
 
 <div id="container">
@@ -71,13 +23,13 @@
   </div>
 </div>
 
-<div class="container" style="display: flex; margin-bottom: 10%">
-  <div style="width: 50%">
+<div class="container" style="display: flex; margin-bottom: 10%;">
+  <div style="width: 50%;">
     <div
       id="carouselExampleControls"
       class="carousel slide"
       data-ride="carousel"
-      style="width: 70%; height: 70%; margin-top: 10%; margin-left: 10%"
+      style="width: 70%; height: 70%; margin-top: 10%; margin-left: 10%;"
     >
       <div class="carousel-inner">
         <div class="carousel-item active">
@@ -110,7 +62,7 @@
       </a>
     </div>
   </div>
-  <div style="flex-grow: 1">
+  <div style="flex-grow: 1;">
     <div class="content-container app">
       <h3>upcomming Projects</h3>
       <p>students suppervition will be in the app store soon ...</p>
@@ -121,7 +73,7 @@
 <!-- Footer -->
 <footer
   class="page-footer font-small special-color-dark pt-4"
-  style="background-color: rgb(66, 65, 65)"
+  style="background-color: rgb(66, 65, 65);"
 >
   <!-- Copyright -->
   <div class="footer-copyright text-center py-3">

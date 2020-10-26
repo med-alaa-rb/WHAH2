@@ -236,12 +236,18 @@ export class HttpService {
   upgreadToGold(obj) {
     return this.http.post(this.ROOT_URL + '/api/users/GoldMembership', obj);
   }
-  ////////////////////////// sending the reports //////////////////
-  reportPost(obj) {
-    return this.http.post(this.ROOT_URL + '/api/report', obj);
+  //////////////////// handle the users report to admin //////////////////
+      //save users report to db and get
+  usersReport(obj){
+    return this.http.post(this.ROOT_URL + '/api/users/Reports', obj)
   }
-  ////////////////////////Admin side for receiving the reports /////////////////
-  getReports() {
-    return this.http.get(this.ROOT_URL + '/api/adminReports');
+  getUsersReport(){
+    return this.http.get(this.ROOT_URL + '/api/admin/getReports')
+  } 
+  deleteReports(obj){
+    return this.http.post(this.ROOT_URL + '/api/admin/delReports', obj)
+  }
+  deleteAllReports(){
+    return this.http.delete(this.ROOT_URL + '/api/admin/delAllReports')
   }
 }
