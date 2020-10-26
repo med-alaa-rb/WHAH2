@@ -1,0 +1,46 @@
+<form>
+  <div class="form-group">
+    <label for="exampleFormControlInput1">username</label>
+    <input
+      type="text"
+      class="form-control"
+      id="exampleFormControlInput1"
+      placeholder="username"
+      #name
+      name="name"
+    />
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect2">Reason of report</label>
+    <select
+      #reason
+      name="reason"
+      multiple
+      class="form-control"
+      id="exampleFormControlSelect2"
+    >
+      <option>select</option>
+      <option>Uncivil, rude or vulgar</option>
+      <option>Incorrect information</option>
+      <option>Over-posting</option>
+      <option>Contains illegal content or activity</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">other reasons</label>
+    <textarea
+      class="form-control"
+      id="exampleFormControlTextarea1"
+      rows="3"
+      #comment
+      name="comment"
+    ></textarea>
+  </div>
+  <button
+    type="button"
+    (click)="report(name.value, reason.value, comment.value)"
+    class="btn btn-primary"
+  >
+    Primary
+  </button>
+</form>
